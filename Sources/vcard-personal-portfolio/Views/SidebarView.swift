@@ -98,6 +98,11 @@ private struct ExpandedSidebarContent {
                         img(.src("/assets/icons/logo-instagram.svg"), .alt("Instagram"), .style(["width": "20px", "height": "20px"]))
                     }
                 }
+                li(.class("social-item")) {
+                    a(.href("#"), .class("social-link")) {
+                        img(.src("/assets/icons/logo-linkedin.svg"), .alt("LinkedIn"), .style(["width": "20px", "height": "20px"]))
+                    }
+                }
             }
         }
     }
