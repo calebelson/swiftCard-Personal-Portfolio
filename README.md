@@ -4,7 +4,7 @@ swiftCard is a personal portfolio template built with **Swift**, [ElementaryUI](
 
 ## Development
 
-This project follows the same basic setup and requirements as[ElementaryUI: Get Started](https://elementary.codes/guide/get-started.html).
+This project follows the same basic setup and requirements as [ElementaryUI: Get Started](https://elementary.codes/guide/get-started.html).
 
 ### Prerequisites
 
