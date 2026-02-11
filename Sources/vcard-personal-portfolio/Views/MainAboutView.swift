@@ -14,17 +14,14 @@ struct MainAboutView {
             section(.class("about-text")) {
                 p { """
                         I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.
-                        I enjoy
-                        turning complex problems into simple, beautiful and intuitive designs.
+                        I enjoy turning complex problems into simple, beautiful and intuitive designs.
                         """ }
 
                 p { """
-                            My job is to build your website so that it is functional and user-friendly but at the same time attractive.
-                            Moreover, I
-                            add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring
-                            across your
-                            message and id                  entity in the most creative way. I created web design for many famous brand companies.
-                            """}
+                        My job is to build your website so that it is functional and user-friendly but at the same time attractive.
+                        Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring
+                        across your message and identity in the most creative way. I created web design for many famous brand companies.
+                        """}
             }
 
             section(.class("testimonials")) {
@@ -97,7 +94,7 @@ private struct TestimonialModalView {
          div(.class(isActive ? "modal-container active" : "modal-container"), HTMLAttribute(name: "data-modal-container", value: "")) {
              section(.class("testimonials-modal")) {
                 button(.class("modal-close-btn"), HTMLAttribute(name: "data-modal-close-btn", value: "")) {
-                    img(.src("./assets/icons/close-outline.svg"), .alt("close icon"))
+                    ionIcon(.custom(name: "name", value: "close-outline")) {}
                 }
                 .onClick { onClose() }
 

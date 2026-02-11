@@ -25,7 +25,7 @@ struct TimelineSection {
 struct ResumeData {
     static let education = TimelineSection(
         title: "Education",
-        icon: "/assets/icons/book-outline.svg",
+        icon: "book-outline",
         items: [
             TimelineItem(
                 organization: "University school of the arts",
@@ -59,7 +59,7 @@ struct ResumeData {
     
     static let experience = TimelineSection(
         title: "Experience",
-        icon: "/assets/icons/briefcase-outline.svg",
+        icon: "briefcase-outline",
         items: [
             TimelineItem(
                 title: "Creative Director",

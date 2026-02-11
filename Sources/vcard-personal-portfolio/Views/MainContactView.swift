@@ -53,7 +53,7 @@ struct MainContactView {
                         invalidForm ? .disabled : HTMLAttribute(name: "", value: ""),
                         HTMLAttribute(name: "data-form-btn", value: "true")
                     ) {
-                        img(.src("/assets/icons/paper-plane.svg"), .alt("Send"), .style(["width": "20px", "height": "20px"]))
+                        ionIcon(.custom(name: "name", value: "paper-plane")) {}
                         span{ "Send Message" }
                     }
                 }

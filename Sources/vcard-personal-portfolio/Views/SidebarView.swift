@@ -10,19 +10,18 @@ struct SidebarView {
         aside(.class(isExpanded ? "sidebar active" : "sidebar")) {
             div(.class("sidebar-info")) {
                 figure(.class("avatar-box")) {
-                    img(.src("/assets/images/my-avatar.png"), .alt("Richard hanrick"), .style(["width": "80px"]))
+                    img(.src("/assets/images/my-avatar.png"), .alt("Richard hanrick"))
                 }
                 div(.class("info-content")) {
                     h1(.class("name"), .title("Richard hanrick")) { "Richard hanrick" }
-                    p(.class("title")) { "Web Developer" }
+                    p(.class("title")) { "Web developer" }
                 }
 
                 // Toggle button with chevron icon that rotates based on state
                 // Hidden on wide screens via CSS
                 button(.class("info_more-btn")) {
                     span { isExpanded ? "Hide Contacts" : "Show Contacts" }
-                    img(.src(isExpanded ? "/assets/icons/chevron-up.svg" : "/assets/icons/chevron-down.svg"),
-                    .alt(""), .style(["width": "20px", "height": "20px"]))
+                    ionIcon(.custom(name: "name", value: isExpanded ? "chevron-up" : "chevron-down")) {}
                 }
                 .onClick { isExpanded.toggle() }
             }
@@ -44,7 +43,7 @@ private struct ExpandedSidebarContent {
             ul(.class("contacts-list")) {
                 li(.class("contact-item")) {
                     div(.class("icon-box")) {
-                        img(.src("/assets/icons/mail-outline.svg"), .alt("Email"), .style(["width": "20px", "height": "20px"]))
+                        ionIcon(.custom(name: "name", value: "mail-outline")) {}
                     }
                     div(.class("contact-info")) {
                         p(.class("contact-title")) { "Email" }
@@ -54,7 +53,7 @@ private struct ExpandedSidebarContent {
 
                 li(.class("contact-item")) {
                     div(.class("icon-box")) {
-                        img(.src("/assets/icons/phone-portrait-outline.svg"), .alt("Phone"), .style(["width": "20px", "height": "20px"]))
+                        ionIcon(.custom(name: "name", value: "phone-portrait-outline")) {}
                     }
                     div(.class("contact-info")) {
                         p(.class("contact-title")) { "Phone" }
@@ -64,7 +63,7 @@ private struct ExpandedSidebarContent {
 
                 li(.class("contact-item")) {
                     div(.class("icon-box")) {
-                        img(.src("/assets/icons/calendar-outline.svg"), .alt("Calendar"), .style(["width": "20px", "height": "20px"]))
+                        ionIcon(.custom(name: "name", value: "calendar-outline")) {}
                     }
                     div(.class("contact-info")) {
                         p(.class("contact-title")) { "Birthday" }
@@ -74,7 +73,7 @@ private struct ExpandedSidebarContent {
 
                 li(.class("contact-item")) {
                     div(.class("icon-box")) {
-                        img(.src("/assets/icons/location-outline.svg"), .alt("Location"), .style(["width": "20px", "height": "20px"]))
+                        ionIcon(.custom(name: "name", value: "location-outline")) {}
                     }
                     div(.class("contact-info")) {
                         p(.class("contact-title")) { "Location" }
@@ -86,22 +85,22 @@ private struct ExpandedSidebarContent {
             ul(.class("social-list")) {
                 li(.class("social-item")) {
                     a(.href("#"), .class("social-link")) {
-                        img(.src("/assets/icons/logo-facebook.svg"), .alt("Facebook"), .style(["width": "20px", "height": "20px"]))
+                        ionIcon(.custom(name: "name", value: "logo-facebook")) {}
                     }
                 }
                 li(.class("social-item")) {
                     a(.href("#"), .class("social-link")) {
-                        img(.src("/assets/icons/logo-twitter.svg"), .alt("Twitter"), .style(["width": "20px", "height": "20px"]))
+                        ionIcon(.custom(name: "name", value: "logo-twitter")) {}
                     }
                 }
                 li(.class("social-item")) {
                     a(.href("#"), .class("social-link")) {
-                        img(.src("/assets/icons/logo-instagram.svg"), .alt("Instagram"), .style(["width": "20px", "height": "20px"]))
+                        ionIcon(.custom(name: "name", value: "logo-instagram")) {}
                     }
                 }
                 li(.class("social-item")) {
                     a(.href("#"), .class("social-link")) {
-                        img(.src("/assets/icons/logo-linkedin.svg"), .alt("LinkedIn"), .style(["width": "20px", "height": "20px"]))
+                        ionIcon(.custom(name: "name", value: "logo-linkedin")) {}
                     }
                 }
             }

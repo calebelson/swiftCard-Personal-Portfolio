@@ -80,7 +80,7 @@ private struct FilterSelectBox {
                     selectedCategory
                 }
                 div(.class("select-icon")) {
-                    img(.src("/assets/icons/chevron-down.svg"), .alt(""), .style(["width": "16px", "height": "16px"]))
+                    ionIcon(.custom(name: "name", value: "chevron-down")) {}
                 }
             }
                 .onClick { _ in isOpen.toggle() }
@@ -122,7 +122,7 @@ private struct ProjectItem {
             a(.href(project.link)) {
                 figure(.class("project-img")) {
                     div(.class("project-item-icon-box")) {
-                        img(.src("/assets/icons/eye-outline.svg"), .alt("view"), .style(["width": "20px", "height": "20px"]))
+                        ionIcon(.custom(name: "name", value: "eye-outline")) {}
                     }
                     img(.src(project.imageURL), .alt(project.title), HTMLAttribute(name: "loading", value: "lazy"))
                 }

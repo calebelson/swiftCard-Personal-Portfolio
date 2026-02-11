@@ -33,9 +33,7 @@ private struct TimelineSectionView {
         section(.class("timeline")) {
             div(.class("title-wrapper")) {
                 div(.class("icon-box")) {
-                    img(
-                        .src(data.icon), .alt(data.title),
-                        .style(["width": "20px", "height": "20px"]))
+                    ionIcon(.custom(name: "name", value: data.icon)) {}
                 }
                 h3(.class("h3 timeline-title")) { data.title }
             }
