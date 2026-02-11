@@ -39,7 +39,18 @@ struct MainAboutView {
                     }
                 }
             }
-            
+
+            section(.class("clients")) {
+                h3(.class("h3 clients-title")) { "Clients" }
+                ul(.class("clients-list has-scrollbar")) {
+                    for client in ClientsData.clients {
+                        ClientsItemView(client: client)
+                    }
+                }
+
+            }
+
+
             // Modal
             if let testimonial = selectedTestimonial {
                 TestimonialModalView(
@@ -107,4 +118,17 @@ private struct TestimonialModalView {
          }
          .onClick { onClose() }
      }
+}
+
+@View
+private struct ClientsItemView {
+    let client: Client
+
+    var body: some View {
+        li(.class("clients-item")) {
+            a(.href(client.link)) {
+                img(.src(client.imageURL), .alt(client.name))
+            }
+        }
+    }
 }
