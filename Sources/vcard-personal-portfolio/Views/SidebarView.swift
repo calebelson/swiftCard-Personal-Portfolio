@@ -10,7 +10,7 @@ struct SidebarView {
         aside(.class(isExpanded ? "sidebar active" : "sidebar")) {
             div(.class("sidebar-info")) {
                 figure(.class("avatar-box")) {
-                    img(.src("/assets/images/my-avatar.png"), .alt("Richard hanrick"))
+                    img(.src("./assets/images/my-avatar.png"), .alt("Richard hanrick"))
                 }
                 div(.class("info-content")) {
                     h1(.class("name"), .title("Richard hanrick")) { "Richard hanrick" }
@@ -34,7 +34,7 @@ struct SidebarView {
 }
 
 // Expanded sidebar content showing contact information
-// Rendered conditionally when sidebar is expanded
+// Displayed conditionally when sidebar is expanded
 @View
 private struct ExpandedSidebarContent {
     var body: some View {

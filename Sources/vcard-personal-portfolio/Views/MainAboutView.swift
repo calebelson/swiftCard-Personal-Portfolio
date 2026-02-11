@@ -64,7 +64,10 @@ struct MainAboutView {
                 TestimonialModalView(
                     testimonial: testimonial,
                     isActive: isModalActive,
-                    onClose: { isModalActive = false }
+                    onClose: { 
+                        isModalActive = false
+                        selectedTestimonial = nil
+                    }
                 )
             }
         }

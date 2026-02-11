@@ -50,11 +50,15 @@ struct MainContactView {
                     button(
                         .type(.submit), 
                         .class("form-btn"), 
-                        invalidForm ? .disabled : HTMLAttribute(name: "", value: ""),
-                        HTMLAttribute(name: "data-form-btn", value: "true")
+                        invalidForm ? .disabled : HTMLAttribute(name: "", value: "")
                     ) {
                         ionIcon(.custom(name: "name", value: "paper-plane")) {}
                         span{ "Send Message" }
+                    }
+                    .onClick {
+                        if !invalidForm {
+                            sendMessage(name: name, email: email, message: message)
+                        }
                     }
                 }
             }
@@ -63,7 +67,7 @@ struct MainContactView {
 }
 
 // Basic email validation - must have exactly one @ with text before and after, and a . with text after it
-func validEmail(_ email: String) -> Bool {
+private func validEmail(_ email: String) -> Bool {
     let parts = email.split(separator: "@")
     guard parts.count == 2 else { return false }
     guard !parts[0].isEmpty && !parts[1].isEmpty else { return false }
@@ -74,4 +78,8 @@ func validEmail(_ email: String) -> Bool {
     guard !domainParts.last!.isEmpty else { return false }
     
     return true
+}
+
+private func sendMessage(name: String, email: String, message: String) {
+    // Implement message sending logic here
 }
