@@ -20,6 +20,7 @@ struct SidebarView {
                 // Toggle button with chevron icon that rotates based on state
                 // Hidden on wide screens via CSS
                 button(.class("info_more-btn")) {
+                    span { isExpanded ? "Hide Contacts" : "Show Contacts" }
                     img(.src(isExpanded ? "/assets/icons/chevron-up.svg" : "/assets/icons/chevron-down.svg"),
                     .alt(""), .style(["width": "20px", "height": "20px"]))
                 }
