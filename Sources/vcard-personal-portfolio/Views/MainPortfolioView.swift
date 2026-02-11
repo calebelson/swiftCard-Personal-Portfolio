@@ -124,7 +124,7 @@ private struct ProjectItem {
                     div(.class("project-item-icon-box")) {
                         img(.src("/assets/icons/eye-outline.svg"), .alt("view"), .style(["width": "20px", "height": "20px"]))
                     }
-                    img(.src(project.imageUrl), .alt(project.title), HTMLAttribute(name: "loading", value: "lazy"))
+                    img(.src(project.imageURL), .alt(project.title), HTMLAttribute(name: "loading", value: "lazy"))
                 }
                 
                 h3(.class("project-title")) { project.title }

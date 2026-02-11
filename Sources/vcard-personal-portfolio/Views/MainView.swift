@@ -1,4 +1,5 @@
 import ElementaryUI
+import JavaScriptKit
 
 // Page navigation enum - defines all available pages in the application
 enum Page {
@@ -31,31 +32,31 @@ struct MainView {
                         button(.class(currentPage == .about ? "navbar-link active" : "navbar-link"), HTMLAttribute(name: "data-nav-link", value: "about")) { 
                             "About" 
                         }
-                        .onClick { currentPage = .about }
+                        .onClick { navigateTo(.about) }
                     }
                     li(.class("navbar-item")) { 
                         button(.class(currentPage == .resume ? "navbar-link active" : "navbar-link"), HTMLAttribute(name: "data-nav-link", value: "resume")) { 
                             "Resume" 
                         }
-                        .onClick { currentPage = .resume }
+                        .onClick { navigateTo(.resume) }
                     }
                     li(.class("navbar-item")) { 
                         button(.class(currentPage == .portfolio ? "navbar-link active" : "navbar-link"), HTMLAttribute(name: "data-nav-link", value: "portfolio")) { 
                             "Portfolio" 
                         }
-                        .onClick { currentPage = .portfolio }
+                        .onClick { navigateTo(.portfolio) }
                     }
                     li(.class("navbar-item")) { 
                         button(.class(currentPage == .blog ? "navbar-link active" : "navbar-link"), HTMLAttribute(name: "data-nav-link", value: "blog")) { 
                             "Blog" 
                         }
-                        .onClick { currentPage = .blog }
+                        .onClick { navigateTo(.blog) }
                     }
                     li(.class("navbar-item")) { 
                         button(.class(currentPage == .contact ? "navbar-link active" : "navbar-link"), HTMLAttribute(name: "data-nav-link", value: "contact")) { 
                             "Contact" 
                         }
-                        .onClick { currentPage = .contact }
+                        .onClick { navigateTo(.contact) }
                     }
                 }
             }
@@ -77,4 +78,10 @@ struct MainView {
             }
         }
     }
+    
+    private func navigateTo(_ page: Page) {
+        currentPage = page
+        _ = JSObject.global.window.scrollTo(0, 0)
+    }
 }
+

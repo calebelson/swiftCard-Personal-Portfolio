@@ -2,6 +2,9 @@ import ElementaryUI
 
 @View
 struct MainAboutView {
+    @State var isModalActive = false
+    @State var selectedTestimonial: Testimonial? = nil
+    
     var body: some View {
         article(.class("about"), HTMLAttribute(name: "data-page", value: "about")) {
             header() {
@@ -23,6 +26,85 @@ struct MainAboutView {
                             message and id                  entity in the most creative way. I created web design for many famous brand companies.
                             """}
             }
+
+            section(.class("testimonials")) {
+                h3(.class("h3 testimonials-title")) { "Testimonials" }
+
+                ul(.class("testimonials-list has-scrollbar")) {
+                    for testimonial in TestimonialsData.testimonials {
+                        TestimonialItemView(testimonial: testimonial, onTap: {
+                            selectedTestimonial = testimonial
+                            isModalActive = true
+                        })
+                    }
+                }
+            }
+            
+            // Modal
+            if let testimonial = selectedTestimonial {
+                TestimonialModalView(
+                    testimonial: testimonial,
+                    isActive: isModalActive,
+                    onClose: { isModalActive = false }
+                )
+            }
         }
     }
+}
+
+@View
+private struct TestimonialItemView {
+    let testimonial: Testimonial
+    let onTap: () -> Void
+
+    var body: some View {
+        li(.class("testimonials-item")) {
+            div(.class("content-card"), HTMLAttribute(name: "data-testimonials-item", value: "")) {
+                figure(.class("testimonials-avatar-box")) {
+                    img(.src(testimonial.imageURL), .alt(testimonial.name), HTMLAttribute(name: "data-testimonials-avatar", value: ""))
+                }
+                h4(.class("h4 testimonials-item-title"), HTMLAttribute(name: "data-testimonials-title", value: "")) { testimonial.name }
+                div(.class("testimonials-text"), HTMLAttribute(name: "data-testimonials-text", value: "")) {
+                    p { testimonial.text }
+                }
+            }
+            .onClick { onTap() }
+        }
+    }
+}
+
+@View
+private struct TestimonialModalView {
+    let testimonial: Testimonial
+    let isActive: Bool
+    let onClose: () -> Void
+
+    var body: some View {
+         div(.class(isActive ? "overlay active" : "overlay"), HTMLAttribute(name: "data-overlay", value: "")) {}
+             .onClick { onClose() }
+         
+         div(.class(isActive ? "modal-container active" : "modal-container"), HTMLAttribute(name: "data-modal-container", value: "")) {
+             section(.class("testimonials-modal")) {
+                button(.class("modal-close-btn"), HTMLAttribute(name: "data-modal-close-btn", value: "")) {
+                    img(.src("./assets/icons/close-outline.svg"), .alt("close icon"))
+                }
+                .onClick { onClose() }
+
+                div(.class("modal-img-wrapper")) {
+                    figure(.class("modal-avatar-box")) {
+                        img(.src(testimonial.imageURL), .alt(testimonial.name), HTMLAttribute(name: "data-modal-img", value: ""))
+                    }
+                    img(.src("./assets/images/icon-quote.svg"), .alt("quote icon"))
+                }
+
+                div(.class("modal-content")) {
+                    h4(.class("h3 modal-title"), HTMLAttribute(name: "data-modal-title", value: "")) { testimonial.name }
+                    div(HTMLAttribute(name: "data-modal-text", value: "")) {
+                        p { testimonial.text }
+                    }
+                }
+             }
+         }
+         .onClick { onClose() }
+     }
 }

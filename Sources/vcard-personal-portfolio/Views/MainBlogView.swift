@@ -25,7 +25,7 @@ private struct BlogPostItemView {
         li(.class("blog-post-item")) {
             a(.href(post.link)) {
                 figure(.class("blog-banner-box")) {
-                    img(.src(post.imageUrl), .alt(post.title), HTMLAttribute(name: "loading", value: "lazy"))
+                    img(.src(post.imageURL), .alt(post.title), HTMLAttribute(name: "loading", value: "lazy"))
                 }
                 div(.class("blog-content")) {
                     div(.class("blog-meta")) {
