@@ -8,7 +8,7 @@ This project follows the same basic setup and requirements as ElementaryUI.
 
 ### Prerequisites
 
-- Install a recent Swift toolchain (Swift 5.7+ recommended).
+- Install a recent Swift toolchain (Swift 6.2+ recommended).
 - Install `swiftwasm` / SwiftWasm toolchain if you plan to build for WebAssembly.
 - Install [Node.js and npm](https://nodejs.org/) (used for the Vite dev server and asset tooling).
 - Ensure `git` and `curl` are available on your PATH.
