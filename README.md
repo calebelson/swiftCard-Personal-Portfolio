@@ -1,6 +1,6 @@
 # swiftCard - Personal portfolio
 
-swiftCard is a personal portfolio vCard-style site built with **Swift**, [ElementaryUI](https://github.com/elementary-swift/elementary-ui), and **SwiftWasm**, replicating the original HTML/CSS/JS vCard template by [codewithsadee](https://github.com/codewithsadee/vcard-personal-portfolio). Development is powered by [Vite](https://vite.dev/).
+swiftCard is a personal portfolio vCard-style site built with **Swift**, [ElementaryUI](https://github.com/elementary-swift/elementary-ui), and [Vite](https://vite.dev/), replicating the original HTML/CSS/JS vCard template by [codewithsadee](https://github.com/codewithsadee/vcard-personal-portfolio).
 
 ## Development
 
