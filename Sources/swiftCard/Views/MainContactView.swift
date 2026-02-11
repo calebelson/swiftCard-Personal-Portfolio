@@ -34,14 +34,14 @@ struct MainContactView {
                 form(.action("#"), .class("form"), HTMLAttribute(name: "data-form", value: "true")) {
                     div(.class("input-wrapper")) {
                         // Input fields with value binding and onInput handlers
-                        input(.type(.text), .name("fullname"), .class("form-input"), .placeholder("Full Name"), .value(name), HTMLAttribute(name: "required", value: "true"), HTMLAttribute(name: "data-form-input", value: "true"))
+                        input(.type(.text), .name("fullname"), .class("form-input"), .placeholder("Full Name"), .value(name), HTMLAttribute(name: "required", value: "true"))
                             .onInput { name = $0.targetValue ?? "" }
-                        input(.type(.email), .name("email"), .class("form-input"), .placeholder("Email Address"), .value(email), HTMLAttribute(name: "required", value: "true"), HTMLAttribute(name: "data-form-input", value: "true"))
+                        input(.type(.email), .name("email"), .class("form-input"), .placeholder("Email Address"), .value(email), HTMLAttribute(name: "required", value: "true"))
                             .onInput { email = $0.targetValue ?? "" }
                     }
 
                     // Textarea content is set via inner text, not .value() attribute
-                    textarea(.name("message"), .class("form-input"), .placeholder("Your Message"), HTMLAttribute(name: "required", value: "true"), HTMLAttribute(name: "data-form-input", value: "true")) {
+                    textarea(.name("message"), .class("form-input"), .placeholder("Your Message"), HTMLAttribute(name: "required", value: "true")) {
                         message
                     }
                         .onInput { message = $0.targetValue ?? "" }

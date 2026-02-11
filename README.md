@@ -1,44 +1,19 @@
-# vCard - Personal portfolio
+# swiftCard - Personal portfolio
 
-![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/vcard-personal-portfolio)
-![GitHub stars](https://img.shields.io/github/stars/codewithsadee/vcard-personal-portfolio?style=social)
-![GitHub forks](https://img.shields.io/github/forks/codewithsadee/vcard-personal-portfolio?style=social)
-[![Twitter Follow](https://img.shields.io/twitter/follow/codewithsadee_?style=social)](https://twitter.com/intent/follow?screen_name=codewithsadee_)
-[![YouTube Video Views](https://img.shields.io/youtube/views/SoxmIlgf2zM?style=social)](https://youtu.be/SoxmIlgf2zM)
+swiftCard is a personal portfolio vCard-style site built with **Swift**, [ElementaryUI](https://github.com/elementary-swift/elementary-ui), and **SwiftWasm**, replicating the original HTML/CSS/JS vCard template by [codewithsadee](https://github.com/codewithsadee/vcard-personal-portfolio). Development is powered by [Vite](https://vite.dev/).
 
-vCard is a fully responsive personal portfolio website, responsive for all devices, built using HTML, CSS, and JavaScript.
+## Development
 
-## Demo
+This project follows the same basic setup and requirements as ElementaryUI.
 
-![vCard Desktop Demo](./website-demo-image/desktop.png "Desktop Demo")
-![vCard Mobile Demo](./website-demo-image/mobile.png "Mobile Demo")
+### Prerequisites
 
-## Prerequisites
-
-Before you begin, ensure you have met the following requirements:
-
-* [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
-
-## Installing vCard
-
-To install **vCard**, follow these steps:
-
-Linux and macOS:
-
-```bash
-sudo git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
-```
-
-Windows:
-
-```bash
-git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
-```
-
-## Contact
-
-If you want to contact me you can reach me at [Twitter](https://www.x.com/codewithsadee_).
+- Install a recent Swift toolchain (Swift 5.7+ recommended).
+- Install `swiftwasm` / SwiftWasm toolchain if you plan to build for WebAssembly.
+- Install [Node.js and npm](https://nodejs.org/) (used for the Vite dev server and asset tooling).
+- Ensure `git` and `curl` are available on your PATH.
 
 ## License
 
-MIT
+swiftCard is released under the MIT License.  
+The original vCard template is © 2022 codewithsadee, MIT-licensed.
