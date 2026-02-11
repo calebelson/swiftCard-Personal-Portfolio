@@ -24,6 +24,17 @@ struct MainAboutView {
                         """}
             }
 
+            section(.class("service")) {
+                h3(.class("h3 service-title")) { "What i'm doing"}
+
+                ul(.class("service-list")) {
+                    for service in ServicesData.services {
+                        ServicesItemView(service: service)
+                    }
+                }
+            }
+
+
             section(.class("testimonials")) {
                 h3(.class("h3 testimonials-title")) { "Testimonials" }
 
@@ -125,6 +136,23 @@ private struct ClientsItemView {
         li(.class("clients-item")) {
             a(.href(client.link)) {
                 img(.src(client.imageURL), .alt(client.name))
+            }
+        }
+    }
+}
+
+@View
+private struct ServicesItemView {
+    let service: Service
+
+    var body: some View {
+        li(.class("service-item")) {
+            div(.class("service-icon-box")) {
+                img(.src(service.imageURL), .alt(service.altText), .width(40))
+            }
+            div(.class("service-content-box")) {
+                h4(.class("h4 service-item-title")) { service.title }
+                p(.class("service-item-text")) { service.text }
             }
         }
     }
