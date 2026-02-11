@@ -94,7 +94,7 @@ private struct FilterSelectBox {
     }
 }
 
-// Extracted to avoid Swift result builder type inference issues with .onClick closures in for loops
+// Extracted to avoid result builder type inference issues with .onClick inside for loops
 @View
 private struct SelectItem {
     let category: String
