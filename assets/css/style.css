@@ -1365,11 +1365,13 @@ textarea.form-input::-webkit-resizer { display: none; }
     top: -30px;
     right: -30px;
     padding: 10px 15px;
+    width: 130px;
   }
 
   .info_more-btn span {
     display: block;
     font-size: var(--fs-8);
+    text-align: center;
   }
 
   .info_more-btn img { display: none; }
