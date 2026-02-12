@@ -15,13 +15,13 @@ struct MainContactView {
     }
     
     var body: some View {
-        article(.class("contact"), HTMLAttribute(name: "data-page", value: "contact")) {
+        article(.class("contact")) {
             header {
                 h2(.class("h2 article-title")) { "Contact" }
             }
 
             // Embedded Google Maps iframe showing location
-            section(.class("mapbox"), HTMLAttribute(name: "data-mapbox", value: "true")) {
+            section(.class("mapbox")) {
                 iframe(
                     .src("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"),
                     .width(400), .height(300), HTMLAttribute(name: "loading", value: "lazy")
@@ -31,7 +31,7 @@ struct MainContactView {
             // Contact form with two-way binding to preserve state
             section(.class("contact-form")) {
                 h3 (.class("h3 form-title")) { "Contact Form" }
-                form(.action("#"), .class("form"), HTMLAttribute(name: "data-form", value: "true")) {
+                form(.action("#"), .class("form")) {
                     div(.class("input-wrapper")) {
                         // Input fields with value binding and onInput handlers
                         input(.type(.text), .name("fullname"), .class("form-input"), .placeholder("Full Name"), .value(name), HTMLAttribute(name: "required", value: "true"))

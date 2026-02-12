@@ -3,7 +3,7 @@ import ElementaryUI
 @View
 struct MainResumeView {
     var body: some View {
-        article(.class("resume"), HTMLAttribute(name: "data-page", value: "resume")) {
+        article(.class("resume")) {
             header {
                 h2(.class("h2 article-title")) { "Resume" }
             }

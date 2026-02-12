@@ -29,31 +29,31 @@ struct MainView {
             nav(.class("navbar")) {
                 ul(.class("navbar-list")) {
                     li(.class("navbar-item")) { 
-                        button(.class(currentPage == .about ? "navbar-link active" : "navbar-link"), HTMLAttribute(name: "data-nav-link", value: "about")) { 
+                        button(.class(currentPage == .about ? "navbar-link active" : "navbar-link")) { 
                             "About" 
                         }
                         .onClick { navigateTo(.about) }
                     }
                     li(.class("navbar-item")) { 
-                        button(.class(currentPage == .resume ? "navbar-link active" : "navbar-link"), HTMLAttribute(name: "data-nav-link", value: "resume")) { 
+                        button(.class(currentPage == .resume ? "navbar-link active" : "navbar-link")) { 
                             "Resume" 
                         }
                         .onClick { navigateTo(.resume) }
                     }
                     li(.class("navbar-item")) { 
-                        button(.class(currentPage == .portfolio ? "navbar-link active" : "navbar-link"), HTMLAttribute(name: "data-nav-link", value: "portfolio")) { 
+                        button(.class(currentPage == .portfolio ? "navbar-link active" : "navbar-link")) { 
                             "Portfolio" 
                         }
                         .onClick { navigateTo(.portfolio) }
                     }
                     li(.class("navbar-item")) { 
-                        button(.class(currentPage == .blog ? "navbar-link active" : "navbar-link"), HTMLAttribute(name: "data-nav-link", value: "blog")) { 
+                        button(.class(currentPage == .blog ? "navbar-link active" : "navbar-link")) { 
                             "Blog" 
                         }
                         .onClick { navigateTo(.blog) }
                     }
                     li(.class("navbar-item")) { 
-                        button(.class(currentPage == .contact ? "navbar-link active" : "navbar-link"), HTMLAttribute(name: "data-nav-link", value: "contact")) { 
+                        button(.class(currentPage == .contact ? "navbar-link active" : "navbar-link")) { 
                             "Contact" 
                         }
                         .onClick { navigateTo(.contact) }
@@ -79,6 +79,7 @@ struct MainView {
         }
     }
     
+    // Navigation helper - updates current page and scrolls to top
     private func navigateTo(_ page: Page) {
         currentPage = page
         _ = JSObject.global.window.scrollTo(0, 0)

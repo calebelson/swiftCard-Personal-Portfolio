@@ -6,7 +6,7 @@ struct MainAboutView {
     @State var selectedTestimonial: Testimonial? = nil
     
     var body: some View {
-        article(.class("about"), HTMLAttribute(name: "data-page", value: "about")) {
+        article(.class("about")) {
             header() {
                 h2(.class("h2 article-title")) { "About Me" }
             }
@@ -81,12 +81,12 @@ private struct TestimonialItemView {
 
     var body: some View {
         li(.class("testimonials-item")) {
-            div(.class("content-card"), HTMLAttribute(name: "data-testimonials-item", value: "")) {
+            div(.class("content-card")) {
                 figure(.class("testimonials-avatar-box")) {
-                    img(.src(testimonial.imageURL), .alt(testimonial.name), HTMLAttribute(name: "data-testimonials-avatar", value: ""))
+                    img(.src(testimonial.imageURL), .alt(testimonial.name))
                 }
-                h4(.class("h4 testimonials-item-title"), HTMLAttribute(name: "data-testimonials-title", value: "")) { testimonial.name }
-                div(.class("testimonials-text"), HTMLAttribute(name: "data-testimonials-text", value: "")) {
+                h4(.class("h4 testimonials-item-title")) { testimonial.name }
+                div(.class("testimonials-text")) {
                     p { testimonial.text }
                 }
             }
@@ -102,26 +102,26 @@ private struct TestimonialModalView {
     let onClose: () -> Void
 
     var body: some View {
-         div(.class(isActive ? "overlay active" : "overlay"), HTMLAttribute(name: "data-overlay", value: "")) {}
+         div(.class(isActive ? "overlay active" : "overlay")) {}
              .onClick { onClose() }
          
-         div(.class(isActive ? "modal-container active" : "modal-container"), HTMLAttribute(name: "data-modal-container", value: "")) {
+         div(.class(isActive ? "modal-container active" : "modal-container")) {
              section(.class("testimonials-modal")) {
-                button(.class("modal-close-btn"), HTMLAttribute(name: "data-modal-close-btn", value: "")) {
+                button(.class("modal-close-btn")) {
                     ionIcon(.custom(name: "name", value: "close-outline")) {}
                 }
                 .onClick { onClose() }
 
                 div(.class("modal-img-wrapper")) {
                     figure(.class("modal-avatar-box")) {
-                        img(.src(testimonial.imageURL), .alt(testimonial.name), HTMLAttribute(name: "data-modal-img", value: ""))
+                        img(.src(testimonial.imageURL), .alt(testimonial.name))
                     }
                     img(.src("./assets/images/icon-quote.svg"), .alt("quote icon"))
                 }
 
                 div(.class("modal-content")) {
-                    h4(.class("h3 modal-title"), HTMLAttribute(name: "data-modal-title", value: "")) { testimonial.name }
-                    div(HTMLAttribute(name: "data-modal-text", value: "")) {
+                    h4(.class("h3 modal-title")) { testimonial.name }
+                    div() {
                         p { testimonial.text }
                     }
                 }

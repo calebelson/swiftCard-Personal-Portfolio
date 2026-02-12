@@ -13,7 +13,7 @@ struct MainPortfolioView {
     }
     
     var body: some View {
-        article(.class("portfolio"), HTMLAttribute(name: "data-page", value: "portfolio")) {
+        article(.class("portfolio")) {
             header {
                 h2(.class("h2 article-title")) { "Portfolio" }
             }
@@ -55,9 +55,7 @@ private struct FilterButton {
     var body: some View {
         li(.class("filter-item")) {
             button(
-                .class(category == selectedCategory ? "active" : ""),
-                HTMLAttribute(name: "data-filter-btn", value: "")
-            ) { category }
+                .class(category == selectedCategory ? "active" : "")) { category }
                 .onClick { _ in selectedCategory = category }
         }
     }
@@ -73,10 +71,9 @@ private struct FilterSelectBox {
     var body: some View {
         div(.class("filter-select-box")) {
             button(
-                isOpen ? .class("filter-select active") : .class("filter-select"),
-                HTMLAttribute(name: "data-select", value: "")
+                isOpen ? .class("filter-select active") : .class("filter-select")
             ) {
-                div(.class("select-value"), HTMLAttribute(name: "data-select-value", value: "")) {
+                div(.class("select-value")) {
                     selectedCategory
                 }
                 div(.class("select-icon")) {
@@ -102,7 +99,7 @@ private struct SelectItem {
     
     var body: some View {
         li(.class("select-item")) {
-            button(HTMLAttribute(name: "data-select-item", value: "")) { category }
+            button { category }
                 .onClick { _ in onSelect(category) }
         }
     }
@@ -115,9 +112,7 @@ private struct ProjectItem {
     
     var body: some View {
         li(
-            .class("project-item active"),
-            HTMLAttribute(name: "data-filter-item", value: ""),
-            HTMLAttribute(name: "data-category", value: project.category.lowercased())
+            .class("project-item active")
         ) {
             a(.href(project.link)) {
                 figure(.class("project-img")) {
