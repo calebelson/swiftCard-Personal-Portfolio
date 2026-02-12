@@ -1,5 +1,7 @@
 import ElementaryUI
 
+// Blog page with linked post cards (image + meta + excerpt)
+// Renders items from `BlogData.posts` using `BlogPostItemView`.
 @View
 struct MainBlogView {
     var body: some View {
@@ -17,6 +19,7 @@ struct MainBlogView {
     }
 }
 
+// Blog post card component: image, category/date meta, title and excerpt
 @View
 private struct BlogPostItemView {
     let post: BlogPost

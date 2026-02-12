@@ -1,5 +1,6 @@
 import ElementaryUI
 
+// Resume page: timeline sections (education/experience) and skills list
 @View
 struct MainResumeView {
     var body: some View {
@@ -25,6 +26,7 @@ struct MainResumeView {
     }
 }
 
+// Timeline section: title, icon and ordered list of timeline items
 @View
 private struct TimelineSectionView {
     let data: TimelineSection
@@ -60,6 +62,7 @@ private struct TimelineSectionView {
     }
 }
 
+// Skill item: shows name, machine-readable `data` value and CSS progress bar
 @View
 private struct SkillItemView {
     let skill: Skill

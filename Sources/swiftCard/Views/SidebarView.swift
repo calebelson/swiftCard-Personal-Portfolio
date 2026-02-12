@@ -1,6 +1,7 @@
 import ElementaryUI
 
-// Collapsible sidebar with avatar, title, and expandable contact information
+// Collapsible sidebar with avatar, title and expandable contacts
+// Toggles on small screens; content is always rendered for accessibility
 @View
 struct SidebarView {
     // Controls sidebar expansion state on mobile

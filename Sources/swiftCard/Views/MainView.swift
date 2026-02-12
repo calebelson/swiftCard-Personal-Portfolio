@@ -1,7 +1,7 @@
 import ElementaryUI
 import JavaScriptKit
 
-// Page navigation enum - defines all available pages in the application
+// Page navigation enum: available pages in the app
 enum Page {
     case about
     case resume
@@ -10,15 +10,14 @@ enum Page {
     case contact
 }
 
-// Main content area with navigation and page views
-// Uses switch-based rendering: only the active page exists in DOM at any time
+// Main content and navigation: renders one active page and preserves form state
+// Acts as a host view for all main pages and manages navigation state
 @View
 struct MainView {
-    // Current active page - controls which view is rendered
+    // Active page
     @State var currentPage: Page = .about
-    
-    // Contact form state - lifted to this level to persist across page switches
-    // Form data is preserved when navigating away from contact page
+
+    // Lifted contact form state so it persists when switching pages
     @State var contactName: String = ""
     @State var contactEmail: String = ""
     @State var contactMessage: String = ""

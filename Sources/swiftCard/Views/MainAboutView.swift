@@ -1,5 +1,7 @@
 import ElementaryUI
 
+// About page containing: bio, services, testimonials, and clients
+// Testimonials open a modal for full details.
 @View
 struct MainAboutView {
     @State var isModalActive = false
@@ -74,6 +76,7 @@ struct MainAboutView {
     }
 }
 
+// Testimonial list item: avatar, name, short text; triggers modal on tap
 @View
 private struct TestimonialItemView {
     let testimonial: Testimonial
@@ -95,6 +98,7 @@ private struct TestimonialItemView {
     }
 }
 
+// Modal view showing the full testimonial with overlay and close handlers
 @View
 private struct TestimonialModalView {
     let testimonial: Testimonial
@@ -131,6 +135,7 @@ private struct TestimonialModalView {
      }
 }
 
+// Client item: logo link
 @View
 private struct ClientsItemView {
     let client: Client
@@ -144,6 +149,7 @@ private struct ClientsItemView {
     }
 }
 
+// Service card: icon, title and description
 @View
 private struct ServicesItemView {
     let service: Service
