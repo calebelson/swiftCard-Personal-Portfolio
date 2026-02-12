@@ -6,7 +6,7 @@
 
 swiftCard is a personal portfolio template built with [ElementaryUI](https://github.com/elementary-swift/elementary-ui), which facilitates running declarative Swift applications natively in the browser using WebAssembly, using [Vite](https://github.com/vitejs/vite) for the dev server.
 
-This project replicates the original HTML/CSS/JS vCard template by [codewithsadee](https://github.com/codewithsadee/vcard-personal-portfolio), but entirely reimplimented.
+This project replicates the original HTML/CSS/JS vCard template by [codewithsadee](https://github.com/codewithsadee/vcard-personal-portfolio), but is entirely reimplimented.
 
 ## Features
 
